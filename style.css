@@ -1,0 +1,725 @@
+/* ==================================
+   1. BASIC PAGE SETTINGS
+================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #05090b;
+    color: #f5f7f7;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+
+/* ==================================
+   2. NAVIGATION BAR
+================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 4%;
+    background-color: #05090b;
+    border-bottom: 1px solid #203237;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #20f59a;
+}
+
+.logo {
+    border: 1px solid #20f59a;
+    border-radius: 12px;
+    padding: 5px 12px;
+    font-size: 25px;
+}
+
+.brand strong {
+    display: block;
+    letter-spacing: 2px;
+}
+
+.brand small {
+    display: block;
+    color: #779b94;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.navbar nav a {
+    color: #a1b9b7;
+    font-size: 14px;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #20f59a;
+}
+
+
+/* ==================================
+   3. EMERGENCY SOS BUTTON
+================================== */
+
+.sos-button {
+    background-color: #ff555d;
+    color: #080808;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sos-button:hover {
+    background-color: #ff747b;
+}
+
+
+/* ==================================
+   4. MAIN CONTENT
+================================== */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero {
+    padding: 75px 0;
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: #20f59a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #20f59a;
+}
+
+.intro {
+    color: #86b5b0;
+    font-size: 17px;
+    max-width: 750px;
+}
+
+.notice {
+    color: #72948f;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.page-main {
+    padding-top: 35px;
+    padding-bottom: 25px;
+}
+
+.page-title {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* ==================================
+   5. BUTTONS AND LINKS
+================================== */
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.primary {
+    background-color: #20f59a;
+    color: #04100a;
+}
+
+.outline {
+    border: 1px solid #20f59a;
+    color: #20f59a;
+    background-color: transparent;
+}
+
+.primary:hover {
+    background-color: #16d984;
+}
+
+.outline:hover {
+    background-color: #123a2b;
+}
+
+.full-width {
+    display: block;
+    margin-top: 18px;
+}
+
+
+/* ==================================
+   6. SECTIONS AND SERVICE CARDS
+================================== */
+
+.section {
+    padding: 35px 0;
+    border-top: 1px solid #203237;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.card-grid {
+    display: grid;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card,
+.supply-card,
+.stat-card,
+.info-panel {
+    background-color: #0d171b;
+    border: 1px solid #20363c;
+    border-radius: 16px;
+}
+
+.service-card {
+    padding: 22px;
+    transition: 0.2s;
+}
+
+.service-card:hover {
+    border-color: #20f59a;
+    transform: translateY(-3px);
+}
+
+.service-icon {
+    color: #20f59a;
+    font-size: 28px;
+}
+
+.service-card h3 {
+    margin: 10px 0 5px;
+}
+
+.service-card p {
+    color: #86b5b0;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.muted {
+    color: #86b5b0;
+}
+
+
+/* ==================================
+   7. NETWORK STATISTICS
+================================== */
+
+.response-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.stat-card {
+    padding: 20px;
+}
+
+.stat-card span {
+    display: block;
+    color: #86b5b0;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.green-text {
+    color: #20f59a;
+}
+
+
+/* ==================================
+   8. FOOTER
+================================== */
+
+.footer {
+    margin-top: 50px;
+    padding: 25px 4%;
+    border-top: 1px solid #203237;
+    background-color: #0a1114;
+    color: #86b5b0;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+
+/* ==================================
+   9. FILTER BUTTONS
+================================== */
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.filter {
+    padding: 10px 16px;
+    border: 1px solid #20f59a;
+    border-radius: 25px;
+    color: #20f59a;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.filter:hover,
+.filter.active {
+    background-color: #123a2b;
+}
+
+
+/* ==================================
+   10. MAP PAGE
+================================== */
+
+.map-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.map-panel {
+    min-width: 0;
+}
+
+.fake-map {
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #20363c;
+    border-radius: 16px;
+    background-color: #071310;
+    background-image:
+        linear-gradient(#16302b 1px, transparent 1px),
+        linear-gradient(90deg, #16302b 1px, transparent 1px);
+    background-size: 36px 36px;
+}
+
+.road {
+    position: absolute;
+    width: 120%;
+    height: 4px;
+    background-color: #183338;
+    border: 1px solid #25464a;
+}
+
+.road-one {
+    top: 25%;
+    left: -10%;
+    transform: rotate(3deg);
+}
+
+.road-two {
+    top: 55%;
+    left: -5%;
+    transform: rotate(-2deg);
+}
+
+.road-three {
+    top: 78%;
+    left: -8%;
+    transform: rotate(-4deg);
+}
+
+.map-marker {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #102b21;
+    border: 1px solid #20f59a;
+    color: #20f59a;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.map-marker:hover {
+    transform: scale(1.1);
+}
+
+.hospital {
+    color: #20f59a;
+}
+
+.pharmacy {
+    color: #69d9ff;
+    border-color: #69d9ff;
+}
+
+.clinic {
+    color: #ffc247;
+    border-color: #ffc247;
+}
+
+.blood {
+    color: #ff6195;
+    border-color: #ff6195;
+}
+
+.m1 { top: 27%; left: 20%; }
+.m2 { top: 13%; left: 28%; }
+.m3 { top: 18%; left: 53%; }
+.m4 { top: 31%; left: 80%; }
+.m5 { top: 56%; left: 68%; }
+.m6 { top: 62%; left: 20%; }
+.m7 { top: 72%; left: 45%; }
+.m8 { top: 49%; left: 43%; }
+
+.map-legend {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    padding: 10px;
+    background-color: #091316;
+    border: 1px solid #254047;
+    border-radius: 10px;
+    color: #86b5b0;
+    font-size: 11px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.info-panel {
+    padding: 22px;
+}
+
+.info-panel h2 {
+    font-size: 22px;
+}
+
+.small-stat {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-top: 1px solid #203237;
+    font-size: 13px;
+}
+
+.small-stat span {
+    color: #86b5b0;
+}
+
+
+/* ==================================
+   11. MEDICAL SUPPLIES PAGE
+================================== */
+
+.supply-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.supply-tools .filter-row {
+    margin-bottom: 15px;
+}
+
+.supply-card {
+    padding: 20px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.card-top h2 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.status {
+    white-space: nowrap;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.low {
+    color: #ffc247;
+    border: 1px solid #805b15;
+}
+
+.critical {
+    color: #ff646b;
+    border: 1px solid #783036;
+}
+
+.out {
+    color: #a6c0c2;
+    background-color: #17272c;
+}
+
+.good {
+    color: #20f59a;
+    border: 1px solid #087b4c;
+}
+
+.stock-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    color: #86b5b0;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+.progress {
+    height: 7px;
+    background-color: #1b2b30;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress span {
+    display: block;
+    height: 100%;
+    background-color: #20f59a;
+}
+
+.progress.red span {
+    background-color: #ff555d;
+}
+
+.progress.amber span {
+    background-color: #ffc247;
+}
+
+.card-note {
+    color: #86b5b0;
+    font-size: 13px;
+    margin: 12px 0 0;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ==================================
+   12. FORM INPUTS
+================================== */
+
+label {
+    display: block;
+    color: #86b5b0;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background-color: #122126;
+    color: #f5f7f7;
+    border: 1px solid #294247;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #72948f;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form .button {
+    cursor: pointer;
+    border: none;
+}
+
+form .button:hover {
+    background-color: #16d984;
+}
+
+#requestMessage {
+    margin-top: 20px;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==================================
+   13. MOBILE RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .map-layout,
+    .response-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+
+    .two,
+    .four,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar nav {
+        gap: 12px;
+    }
+
+    .sos-button {
+        padding: 10px 12px;
+    }
+
+    .fake-map {
+        height: 360px;
+    }
+
+    .map-legend {
+        right: 8px;
+        font-size: 10px;
+    }
+
+    .card-top {
+        flex-wrap: wrap;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
+}

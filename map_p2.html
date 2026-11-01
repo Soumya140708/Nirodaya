@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nirodaya - Live Response Map</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="index_p1.html" class="brand">
+            <span class="logo">✚</span>
+
+            <span>
+                <strong>NIRODAYA</strong>
+                <small>HEALTH THAT RISES WITH YOU</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="index_p1.html">Home</a>
+            <a href="map_p2.html" class="active">Live Response Map</a>
+            <a href="supplies_p3.html">Medical Supplies</a>
+	    <a href="request_p4.html">Request Aid</a>
+        </nav>
+
+        <button class="sos-button" onclick="showEmergencyMessage()">
+            ☎ Emergency SOS
+        </button>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container page-main">
+
+        <p class="eyebrow">FIND MEDICAL SUPPORT</p>
+
+        <h1 class="page-title">Live Response Map</h1>
+
+        <p class="intro">
+            Select a medical service to find locations.
+            Click any marker to view its details.
+        </p>
+
+
+        <!-- Service Filter Buttons -->
+        <div class="filter-row" id="mapFilters">
+
+            <button class="filter active" data-filter="all">
+                All Services
+            </button>
+
+            <button class="filter" data-filter="Ambulance">
+                🚑 Ambulances
+            </button>
+
+            <button class="filter" data-filter="Hospital">
+                ✚ Hospitals
+            </button>
+
+            <button class="filter" data-filter="Pharmacy">
+                ▣ Pharmacies
+            </button>
+
+            <button class="filter" data-filter="Clinic">
+                ⌂ Clinics
+            </button>
+
+            <button class="filter" data-filter="Blood bank">
+                ♥ Blood Banks
+            </button>
+
+        </div>
+
+
+        <!-- Map and Location Details -->
+        <div class="map-layout">
+
+            <section class="map-panel">
+
+                <div class="fake-map" id="fakeMap">
+
+                    <!-- Roads -->
+                    <span class="road road-one"></span>
+                    <span class="road road-two"></span>
+                    <span class="road road-three"></span>
+
+
+                    <!-- Hospital Markers -->
+                    <button class="map-marker hospital m1"
+                        data-type="Hospital"
+                        data-name="Sunridge General Hospital"
+                        data-info="Emergency care facility. Sample listing.">
+                        ✚
+                    </button>
+
+                    <button class="map-marker hospital m4"
+                        data-type="Hospital"
+                        data-name="Apex Chest and Lung Center"
+                        data-info="Specialist medical centre. Sample listing.">
+                        ✚
+                    </button>
+
+
+                    <!-- Pharmacy Markers -->
+                    <button class="map-marker pharmacy m2"
+                        data-type="Pharmacy"
+                        data-name="MediPoint Pharmacy"
+                        data-info="Pharmacy and medicine support. Sample listing.">
+                        ▣
+                    </button>
+
+                    <button class="map-marker pharmacy m8"
+                        data-type="Pharmacy"
+                        data-name="Nightwatch Pharmacy"
+                        data-info="Pharmacy service. Sample listing.">
+                        ▣
+                    </button>
+
+
+                    <!-- Ambulance Markers -->
+                    <button class="map-marker ambulance m3"
+                        data-type="Ambulance"
+                        data-name="City Response Ambulance Depot"
+                        data-info="Ambulance response unit. Sample location.">
+                        🚑
+                    </button>
+
+                    <button class="map-marker ambulance m7"
+                        data-type="Ambulance"
+                        data-name="Northside Ambulance Unit"
+                        data-info="Ambulance response unit. Sample location.">
+                        🚑
+                    </button>
+
+
+                    <!-- Clinic Marker -->
+                    <button class="map-marker clinic m5"
+                        data-type="Clinic"
+                        data-name="GreenCross Community Clinic"
+                        data-info="Community medical clinic. Sample listing.">
+                        ⌂
+                    </button>
+
+
+                    <!-- Blood Bank Marker -->
+                    <button class="map-marker blood m6"
+                        data-type="Blood bank"
+                        data-name="Lifeline Blood Bank"
+                        data-info="Blood bank service. Confirm availability directly.">
+                        ♥
+                    </button>
+
+
+                    <!-- Map Legend -->
+                    <div class="map-legend">
+                        <span>● Hospital</span>
+                        <span>● Pharmacy</span>
+                        <span>● Clinic</span>
+                        <span>● Blood Bank</span>
+                        <span>● Ambulance</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Location Information Panel -->
+            <aside class="info-panel">
+
+                <p class="eyebrow">SELECTED LOCATION</p>
+
+                <h2 id="locationName">
+                    Choose a Map Marker
+                </h2>
+
+                <p id="locationInfo" class="muted">
+                    Click any coloured marker on the map
+                    to view information about that location.
+                </p>
+
+                <div class="small-stat">
+                    <span>Network Status</span>
+                    <strong class="green-text">Demo Only</strong>
+                </div>
+
+                <div class="small-stat">
+                    <span>GPS Tracking</span>
+                    <strong>Not Connected</strong>
+                </div>
+
+                <p class="notice">
+                    This is an illustrative map.
+                    It does not show real-time GPS positions.
+                </p>
+
+                <a href="supplies_p3.html" class="button outline full-width">
+                    Check Medical Supplies →
+                </a>
+
+                <a href="index_p1.html" class="button outline full-width">
+                    ← Back to Home
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            <strong>✚ NIRODAYA</strong>
+            — Health that rises with you.
+        </p>
+
+        <p>
+            Demo locations only. Verify medical services directly.
+        </p>
+
+    </footer>
+
+</body>
+</html>

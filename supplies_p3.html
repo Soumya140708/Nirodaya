@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nirodaya - Critical Medical Supplies</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="index_p1.html" class="brand">
+            <span class="logo">✚</span>
+
+            <span>
+                <strong>NIRODAYA</strong>
+                <small>HEALTH THAT RISES WITH YOU</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="index_p1.html">Home</a>
+            <a href="map_p2.html">Live Response Map</a>
+            <a href="supplies_p3.html" class="active">Medical Supplies</a>
+	    <a href="request_p4.html">Request Aid</a>
+        </nav>
+
+        <button class="sos-button" onclick="showEmergencyMessage()">
+            ☎ Emergency SOS
+        </button>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container page-main">
+
+        <p class="eyebrow">SUPPLY MONITORING</p>
+
+        <h1 class="page-title">Critical Medical Supplies</h1>
+
+        <p class="intro">
+            Check sample availability of essential medical supplies
+            across hospitals, pharmacies and emergency facilities.
+        </p>
+
+
+        <!-- Category Filters and Search -->
+        <div class="supply-tools">
+
+            <div class="filter-row" id="supplyFilters">
+
+                <button class="filter active" data-filter="all">
+                    All Supplies
+                </button>
+
+                <button class="filter" data-filter="Blood">
+                    ♥ Blood
+                </button>
+
+                <button class="filter" data-filter="Oxygen">
+                    Oxygen
+                </button>
+
+                <button class="filter" data-filter="Medication">
+                    Medication
+                </button>
+
+                <button class="filter" data-filter="PPE">
+                    PPE
+                </button>
+
+                <button class="filter" data-filter="Equipment">
+                    Equipment
+                </button>
+
+            </div>
+
+            <input
+                type="text"
+                id="supplySearch"
+                placeholder="Search a supply line..."
+                aria-label="Search medical supplies">
+
+        </div>
+
+
+        <!-- Medical Supply Cards -->
+        <div class="card-grid two" id="supplyGrid">
+
+
+            <!-- Supply 1 -->
+            <article class="supply-card"
+                data-category="Medication"
+                data-search="anti venom serum apex chest lung center">
+
+                <div class="card-top">
+                    <h2>Anti-Venom Serum</h2>
+                    <span class="status low">Low Stock</span>
+                </div>
+
+                <p class="muted">
+                    Medication · Apex Chest and Lung Center
+                </p>
+
+                <div class="stock-line">
+                    <span>9 vials</span>
+                    <span>22% of target</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:22%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+
+            <!-- Supply 2 -->
+            <article class="supply-card"
+                data-category="Equipment"
+                data-search="automated external defibrillators city response ambulance depot">
+
+                <div class="card-top">
+                    <h2>External Defibrillators</h2>
+                    <span class="status critical">Critical</span>
+                </div>
+
+                <p class="muted">
+                    Equipment · City Response Ambulance Depot
+                </p>
+
+                <div class="stock-line">
+                    <span>3 units</span>
+                    <span>15% of target</span>
+                </div>
+
+                <div class="progress red">
+                    <span style="width:15%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+
+            <!-- Supply 3 -->
+            <article class="supply-card"
+                data-category="Medication"
+                data-search="epinephrine auto injectors nightwatch pharmacy">
+
+                <div class="card-top">
+                    <h2>Epinephrine Auto-Injectors</h2>
+                    <span class="status critical">Critical</span>
+                </div>
+
+                <p class="muted">
+                    Medication · Nightwatch Pharmacy
+                </p>
+
+                <div class="stock-line">
+                    <span>6 pens</span>
+                    <span>12% of target</span>
+                </div>
+
+                <div class="progress red">
+                    <span style="width:12%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Resupply requested in this sample
+                </p>
+
+            </article>
+
+
+            <!-- Supply 4 -->
+            <article class="supply-card"
+                data-category="Medication"
+                data-search="insulin glargine pens medipoint pharmacy">
+
+                <div class="card-top">
+                    <h2>Insulin Glargine Pens</h2>
+                    <span class="status out">Out of Stock</span>
+                </div>
+
+                <p class="muted">
+                    Medication · MediPoint Pharmacy
+                </p>
+
+                <div class="stock-line">
+                    <span>0 pens</span>
+                    <span>0% of target</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:0%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ No stock shown in this sample
+                </p>
+
+            </article>
+
+
+            <!-- Supply 5 -->
+            <article class="supply-card"
+                data-category="PPE"
+                data-search="n95 respirator masks metro care multispeciality">
+
+                <div class="card-top">
+                    <h2>N95 Respirator Masks</h2>
+                    <span class="status good">In Stock</span>
+                </div>
+
+                <p class="muted">
+                    PPE · Metro Care Multispeciality
+                </p>
+
+                <div class="stock-line">
+                    <span>420 masks</span>
+                    <span>92% of target</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:92%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+
+            <!-- Supply 6 -->
+            <article class="supply-card"
+                data-category="Oxygen"
+                data-search="normal saline iv fluids sunridge general hospital">
+
+                <div class="card-top">
+                    <h2>Normal Saline IV Fluids</h2>
+                    <span class="status good">In Stock</span>
+                </div>
+
+                <p class="muted">
+                    Oxygen and IV Fluids · Sunridge General Hospital
+                </p>
+
+                <div class="stock-line">
+                    <span>240 bags</span>
+                    <span>78% of target</span>
+                </div>
+
+                <div class="progress">
+                    <span style="width:78%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+
+            <!-- Supply 7 -->
+            <article class="supply-card"
+                data-category="Oxygen"
+                data-search="oxygen concentrators greencross community clinic">
+
+                <div class="card-top">
+                    <h2>Oxygen Concentrators</h2>
+                    <span class="status low">Low Stock</span>
+                </div>
+
+                <p class="muted">
+                    Oxygen · GreenCross Community Clinic
+                </p>
+
+                <div class="stock-line">
+                    <span>12 units</span>
+                    <span>30% of target</span>
+                </div>
+
+                <div class="progress amber">
+                    <span style="width:30%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+
+            <!-- Supply 8 -->
+            <article class="supply-card"
+                data-category="Blood"
+                data-search="o negative blood units lifeline blood bank">
+
+                <div class="card-top">
+                    <h2>O Negative Blood Units</h2>
+                    <span class="status low">Low Stock</span>
+                </div>
+
+                <p class="muted">
+                    Blood · Lifeline Blood Bank
+                </p>
+
+                <div class="stock-line">
+                    <span>18 units</span>
+                    <span>28% of target</span>
+                </div>
+
+                <div class="progress amber">
+                    <span style="width:28%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <p id="noResults" class="muted hidden">
+            No matching supplies found. Try another search.
+        </p>
+
+        <p class="notice">
+            All quantities are fictional sample data for this
+            student project. They do not represent real medical stock.
+        </p>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            <strong>✚ NIRODAYA</strong>
+            — Health that rises with you.
+        </p>
+
+        <p>
+            Always confirm critical supplies directly with the facility.
+        </p>
+
+    </footer>
+
+</body>
+</html>

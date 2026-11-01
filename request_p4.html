@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nirodaya - Request Medical Aid</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <a href="index_p1.html" class="brand">
+            <span class="logo">✚</span>
+
+            <span>
+                <strong>NIRODAYA</strong>
+                <small>HEALTH THAT RISES WITH YOU</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="index_p1.html">Home</a>
+            <a href="map_p2.html">Live Response Map</a>
+            <a href="supplies_p3.html">Medical Supplies</a>
+            <a href="request_p4.html" class="active">Request Aid</a>
+        </nav>
+
+        <button class="sos-button" onclick="showEmergencyMessage()">
+            ☎ Emergency SOS
+        </button>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container page-main">
+
+        <p class="eyebrow">MEDICAL ASSISTANCE</p>
+
+        <h1 class="page-title">Request Medical Aid</h1>
+
+        <p class="intro">
+            Enter the details below to prepare a sample medical
+            assistance request.
+        </p>
+
+
+        <div class="map-layout">
+
+            <!-- Request Form -->
+            <section class="info-panel">
+
+                <h2>Patient Information</h2>
+
+                <form id="aidForm">
+
+                    <label for="patientName">Patient Name</label>
+                    <input
+                        type="text"
+                        id="patientName"
+                        placeholder="Enter patient name"
+                        required>
+
+                    <br><br>
+
+                    <label for="phone">Contact Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter contact number"
+                        required>
+
+                    <br><br>
+
+                    <label for="emergencyType">Type of Emergency</label>
+
+                    <select id="emergencyType" required>
+                        <option value="">Select emergency type</option>
+                        <option value="Medical emergency">Medical emergency</option>
+                        <option value="Accident">Accident</option>
+                        <option value="Breathing difficulty">Breathing difficulty</option>
+                        <option value="Pregnancy assistance">Pregnancy assistance</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <br><br>
+
+                    <label for="patientLocation">Location / Address</label>
+                    <input
+                        type="text"
+                        id="patientLocation"
+                        placeholder="Enter location"
+                        required>
+
+                    <br><br>
+
+                    <label for="details">Additional Information</label>
+
+                    <textarea
+                        id="details"
+                        rows="4"
+                        placeholder="Briefly describe the situation"></textarea>
+
+                    <br><br>
+
+                    <button type="submit" class="button primary">
+                        Prepare Request
+                    </button>
+
+                </form>
+
+                <p id="requestMessage" class="muted"></p>
+
+            </section>
+
+
+            <!-- Information Panel -->
+            <aside class="info-panel">
+
+                <p class="eyebrow">IMPORTANT INFORMATION</p>
+
+                <h2>Need immediate help?</h2>
+
+                <p class="muted">
+                    This form is a student-project demonstration.
+                    It does not send your details to an ambulance,
+                    hospital, or emergency service.
+                </p>
+
+                <div class="small-stat">
+                    <span>Emergency number in India</span>
+                    <strong class="green-text">112</strong>
+                </div>
+
+                <div class="small-stat">
+                    <span>Request status</span>
+                    <strong>Demo only</strong>
+                </div>
+
+                <a href="map_p2.html" class="button outline full-width">
+                    View Medical Map →
+                </a>
+
+                <a href="supplies_p3.html" class="button outline full-width">
+                    Check Supplies →
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            <strong>✚ NIRODAYA</strong>
+            — Health that rises with you.
+        </p>
+
+        <p>Demonstration only. No real request is transmitted.</p>
+
+    </footer>
+
+
+    <!-- Form Interaction -->
+    <script>
+        document.getElementById("aidForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            var name = document.getElementById("patientName").value;
+            var emergency = document.getElementById("emergencyType").value;
+            var location = document.getElementById("patientLocation").value;
+
+            document.getElementById("requestMessage").textContent =
+                "Demo request prepared for " + name +
+                ". Emergency: " + emergency +
+                ". Location: " + location +
+                ". No emergency service has been contacted.";
+
+        });
+    </script>
+
+</body>
+</html>
