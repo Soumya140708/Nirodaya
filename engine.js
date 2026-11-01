@@ -8,7 +8,7 @@
 const HAZARD_PENALTY_MIN = 10;   // extra minutes for each flood zone a route crosses
 const OSRM_URL = "https://router.project-osrm.org/route/v1/driving/";
 const FALLBACK_SPEED_MS = 25000 / 3600;  // 25 km/h, only used if routing service fails
-const SIM_SPEED = 30;            // demo clock runs 30x faster than real time
+const SIM_SPEED = 10;             // demo clock runs 5x faster than real time (change to speed up or slow down)
 const STORAGE_KEY = "nirodaya_requests";
 
 // ---------- SMALL HELPERS ----------

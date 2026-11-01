@@ -5,6 +5,13 @@
 // ==========================================================
 
 const hospitalSelect = document.getElementById("hospitalSelect");
+
+// First option shows every alert, so a demo never looks empty by mistake
+const allOption = document.createElement("option");
+allOption.value = "__all__";
+allOption.textContent = "All hospitals";
+hospitalSelect.appendChild(allOption);
+
 HOSPITALS.forEach(function (h) {
     const o = document.createElement("option");
     o.value = h.name;
@@ -21,12 +28,13 @@ function render() {
     if (snapshot === lastSnapshot) return;       // nothing changed: do not redraw
     lastSnapshot = snapshot;
 
-    const mine = loadRequests().filter(function (r) { return r.hospital.name === selected; })
-                               .reverse();       // newest first
+    const mine = loadRequests().filter(function (r) {
+                                   return selected === "__all__" || r.hospital.name === selected;
+                               }).reverse();     // newest first
     const box = document.getElementById("alertList");
 
     if (mine.length === 0) {
-        box.innerHTML = "<p class='muted'>No incoming alerts for this hospital. " +
+        box.innerHTML = "<p class='muted'>No incoming alerts. " +
                         "Create a request on the Request Aid page.</p>";
         return;
     }
@@ -42,6 +50,7 @@ function render() {
 
         html += "<article class='supply-card alert-card'>" +
             "<div class='card-top'><h2>" + escapeHtml(r.id) + " · " + escapeHtml(r.type) + "</h2>" + badge + "</div>" +
+            "<p class='muted'>Alert sent to: " + escapeHtml(r.hospital.name) + "</p>" +
             "<p class='muted'>Patient: " + escapeHtml(r.name) + " · Contact: " + escapeHtml(r.phone) + "</p>" +
             (r.details ? "<p class='card-note'>Notes: " + escapeHtml(r.details) + "</p>" : "") +
             "<div class='stock-line'><span>Ambulance</span><span>" + escapeHtml(r.ambulance.name) + "</span></div>" +
