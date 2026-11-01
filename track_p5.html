@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirodaya - Track Request</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="logo">✚</span>
+            <span>
+                <strong>NIRODAYA</strong>
+                <small>HEALTH THAT RISES WITH YOU</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="map_p2.html">Live Response Map</a>
+            <a href="request_p4.html">Request Aid</a>
+            <a href="hospital_p6.html">Hospital Dashboard</a>
+            <a href="supplies_p3.html">Medical Supplies</a>
+        </nav>
+
+        <button class="sos-button" onclick="showEmergencyMessage()">
+            ☎ Emergency SOS
+        </button>
+    </header>
+
+    <main class="container page-main">
+
+        <p class="eyebrow">REQUEST STATUS</p>
+        <h1 class="page-title">Track Your Request</h1>
+        <p class="intro">Simulated ambulance journey. The demo clock runs 30 times faster than real time.</p>
+
+        <div id="trackContent" class="hidden">
+            <div class="map-layout">
+
+                <section class="map-panel">
+                    <div id="trackMap" class="leaflet-box"></div>
+                    <p class="notice" id="hazardNote"></p>
+                </section>
+
+                <aside class="info-panel">
+                    <p class="eyebrow">REQUEST <span id="reqId"></span></p>
+                    <h2 id="reqPatient"></h2>
+
+                    <div class="small-stat"><span>Ambulance</span><strong id="reqAmb"></strong></div>
+                    <div class="small-stat"><span>Hospital</span><strong id="reqHosp"></strong></div>
+                    <div class="small-stat"><span>Time to patient</span><strong class="green-text" id="etaText"></strong></div>
+
+                    <div class="progress"><span id="progressBar" style="width:0%"></span></div>
+
+                    <ul class="timeline">
+                        <li id="step1"></li>
+                        <li id="step2"></li>
+                        <li id="step3"></li>
+                        <li id="step4"></li>
+                        <li id="step5"></li>
+                        <li id="step6"></li>
+                    </ul>
+
+                    <p class="notice">
+                        Simulation only. For a real emergency call 112.
+                    </p>
+
+                    <a href="hospital_p6.html" class="button outline full-width">Open hospital dashboard →</a>
+                    <a href="request_p4.html" class="button outline full-width">← New request</a>
+                </aside>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p><strong>✚ NIRODAYA</strong> — Health that rises with you.</p>
+        <p>Simulated tracking. No real ambulance is moving.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data.js"></script>
+    <script src="engine.js"></script>
+    <script src="track.js"></script>
+
+</body>
+</html>

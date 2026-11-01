@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirodaya - Hospital Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="brand">
+            <span class="logo">✚</span>
+            <span>
+                <strong>NIRODAYA</strong>
+                <small>HEALTH THAT RISES WITH YOU</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="map_p2.html">Live Response Map</a>
+            <a href="request_p4.html">Request Aid</a>
+            <a href="hospital_p6.html" class="active">Hospital Dashboard</a>
+            <a href="supplies_p3.html">Medical Supplies</a>
+        </nav>
+
+        <button class="sos-button" onclick="showEmergencyMessage()">
+            ☎ Emergency SOS
+        </button>
+    </header>
+
+    <main class="container page-main">
+
+        <p class="eyebrow">HOSPITAL PRE-ALERT</p>
+        <h1 class="page-title">Hospital Dashboard</h1>
+
+        <p class="intro">
+            Shows what a participating hospital would see when an ambulance is
+            bringing a patient. Open this page in a second tab while you make a
+            request, and the alert appears here.
+        </p>
+
+        <div class="emergency-banner">
+            <strong>Simulation:</strong> no real hospital receives these alerts.
+            A real system would need participating hospitals and a secure server.
+        </div>
+
+        <div class="supply-tools">
+            <div>
+                <label for="hospitalSelect">Viewing as</label>
+                <select id="hospitalSelect"></select>
+            </div>
+            <button id="clearBtn" class="button outline" type="button">Clear demo requests</button>
+        </div>
+
+        <div id="alertList" class="card-grid two"></div>
+
+    </main>
+
+    <footer class="footer">
+        <p><strong>✚ NIRODAYA</strong> — Health that rises with you.</p>
+        <p>Demonstration only. Alerts are stored in this browser, not sent to any hospital.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="engine.js"></script>
+    <script src="hospital.js"></script>
+
+</body>
+</html>

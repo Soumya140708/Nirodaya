@@ -15,7 +15,7 @@
     <!-- Navigation Bar -->
     <header class="navbar">
 
-        <a href="index_p1.html" class="brand">
+        <a href="index.html" class="brand">
             <span class="logo">✚</span>
 
             <span>
@@ -25,10 +25,11 @@
         </a>
 
         <nav>
-            <a href="index_p1.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="map_p2.html">Live Response Map</a>
+            <a href="request_p4.html">Request Aid</a>
+            <a href="hospital_p6.html">Hospital Dashboard</a>
             <a href="supplies_p3.html" class="active">Medical Supplies</a>
-	    <a href="request_p4.html">Request Aid</a>
         </nav>
 
         <button class="sos-button" onclick="showEmergencyMessage()">
@@ -41,9 +42,15 @@
     <!-- Main Content -->
     <main class="container page-main">
 
-        <p class="eyebrow">SUPPLY MONITORING</p>
+        <p class="eyebrow">FUTURE SCOPE · PHASE TWO</p>
 
         <h1 class="page-title">Critical Medical Supplies</h1>
+
+        <div class="emergency-banner">
+            <strong>Future scope preview.</strong> The current research focuses on
+            ambulance coordination. In phase two, this page would find nearby
+            suppliers, compare prices and arrange delivery with verified partners.
+        </div>
 
         <p class="intro">
             Check sample availability of essential medical supplies
@@ -247,7 +254,7 @@
 
             <!-- Supply 6 -->
             <article class="supply-card"
-                data-category="Oxygen"
+                data-category="Medication"
                 data-search="normal saline iv fluids sunridge general hospital">
 
                 <div class="card-top">
@@ -256,7 +263,7 @@
                 </div>
 
                 <p class="muted">
-                    Oxygen and IV Fluids · Sunridge General Hospital
+                    Medication (IV fluids) · Sunridge General Hospital
                 </p>
 
                 <div class="stock-line">
@@ -266,6 +273,36 @@
 
                 <div class="progress">
                     <span style="width:78%"></span>
+                </div>
+
+                <p class="card-note">
+                    ◷ Sample stock information
+                </p>
+
+            </article>
+
+
+            <!-- Supply 6b: Oxygen cylinders (added) -->
+            <article class="supply-card"
+                data-category="Oxygen"
+                data-search="oxygen cylinders medical oxygen sunridge general hospital">
+
+                <div class="card-top">
+                    <h2>Medical Oxygen Cylinders</h2>
+                    <span class="status low">Low Stock</span>
+                </div>
+
+                <p class="muted">
+                    Oxygen · Sunridge General Hospital
+                </p>
+
+                <div class="stock-line">
+                    <span>14 cylinders</span>
+                    <span>35% of target</span>
+                </div>
+
+                <div class="progress amber">
+                    <span style="width:35%"></span>
                 </div>
 
                 <p class="card-note">

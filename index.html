@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nirodaya - Medical Emergency Aid</title>
+    <title>Nirodaya - Hazard-Aware Ambulance Coordination</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
     <header class="navbar">
-        <a href="index_p1.html" class="brand">
+        <a href="index.html" class="brand">
             <span class="logo">✚</span>
             <span>
                 <strong>NIRODAYA</strong>
@@ -19,10 +19,11 @@
         </a>
 
         <nav>
-            <a href="index_p1.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="map_p2.html">Live Response Map</a>
+            <a href="request_p4.html">Request Aid</a>
+            <a href="hospital_p6.html">Hospital Dashboard</a>
             <a href="supplies_p3.html">Medical Supplies</a>
-	    <a href="request_p4.html">Request Aid</a>
         </nav>
 
         <button class="sos-button" onclick="showEmergencyMessage()">
@@ -33,7 +34,7 @@
     <main class="container">
 
         <section class="hero">
-            <p class="eyebrow">MEDICAL EMERGENCY AID</p>
+            <p class="eyebrow">HAZARD-AWARE AMBULANCE COORDINATION</p>
 
             <h1>
                 Help is closer than<br>
@@ -41,66 +42,90 @@
             </h1>
 
             <p class="intro">
-                Find nearby medical support and check essential
-                medical supply availability from one simple dashboard.
+                Nirodaya compares ambulances by route-based arrival time instead
+                of distance alone, accounts for flooded roads, and pre-alerts
+                the receiving hospital.
             </p>
 
             <div class="button-row">
-                <a href="map_p2.html" class="button primary">
-                    ✚ Find Medical Help
+                <a href="request_p4.html" class="button primary">
+                    ✚ Request an Ambulance (Demo)
                 </a>
 
-                <a href="supplies_p3.html" class="button outline">
-                    ▣ Check Supplies
+                <a href="map_p2.html" class="button outline">
+                    ▣ Open Response Map
                 </a>
             </div>
 
             <p class="notice">
-                Student project demonstration using sample data.
+                Student research prototype using sample data. In a real emergency, call 112.
             </p>
         </section>
 
         <section class="section">
-            <p class="eyebrow">QUICK ACCESS</p>
-            <h2>Medical Services</h2>
+            <p class="eyebrow">HOW IT WORKS</p>
+            <h2>One emergency workflow</h2>
 
             <div class="card-grid four">
-
-                <a href="map_p2.html" class="service-card">
+                <div class="service-card">
+                    <div class="service-icon">📍</div>
+                    <h3>1. Locate</h3>
+                    <p>Get the patient's location</p>
+                </div>
+                <div class="service-card">
                     <div class="service-icon">🚑</div>
-                    <h3>Ambulances</h3>
-                    <p>Find response units</p>
-                </a>
-
-                <a href="map_p2.html" class="service-card">
+                    <h3>2. Compare</h3>
+                    <p>Route-based ETA for each available ambulance</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌧</div>
+                    <h3>3. Avoid hazards</h3>
+                    <p>Penalise routes through flood-prone roads</p>
+                </div>
+                <div class="service-card">
                     <div class="service-icon">✚</div>
-                    <h3>Hospitals</h3>
-                    <p>Explore medical centres</p>
-                </a>
+                    <h3>4. Pre-alert</h3>
+                    <p>Hospital is warned before arrival</p>
+                </div>
+            </div>
+        </section>
 
+        <section class="section">
+            <p class="eyebrow">EXPLORE</p>
+            <h2>Prototype pages</h2>
+
+            <div class="card-grid four">
+                <a href="request_p4.html" class="service-card">
+                    <div class="service-icon">🚑</div>
+                    <h3>Request Aid</h3>
+                    <p>Simulated ambulance request</p>
+                </a>
                 <a href="map_p2.html" class="service-card">
                     <div class="service-icon">▣</div>
-                    <h3>Pharmacies</h3>
-                    <p>Find medicine support</p>
+                    <h3>Response Map</h3>
+                    <p>Compare selection methods</p>
                 </a>
-
-                <a href="map_p2.html" class="service-card">
+                <a href="hospital_p6.html" class="service-card">
+                    <div class="service-icon">✚</div>
+                    <h3>Hospital Dashboard</h3>
+                    <p>Incoming alerts</p>
+                </a>
+                <a href="supplies_p3.html" class="service-card">
                     <div class="service-icon">♥</div>
-                    <h3>Blood Banks</h3>
-                    <p>Find blood services</p>
+                    <h3>Medical Supplies</h3>
+                    <p>Future scope preview</p>
                 </a>
-
             </div>
         </section>
 
         <section class="section response-preview">
             <div>
-                <p class="eyebrow">NETWORK OVERVIEW</p>
-                <h2>Live Response Network</h2>
+                <p class="eyebrow">PROTOTYPE DATA</p>
+                <h2>Sample Network</h2>
 
                 <p class="muted">
-                    Explore medical locations and check essential
-                    supply information through one dashboard.
+                    Everything here is sample data used to test the method.
+                    These numbers are counted from the project's data file.
                 </p>
 
                 <a href="map_p2.html" class="button outline">
@@ -110,22 +135,22 @@
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span>Ambulances Listed</span>
-                    <strong>08</strong>
+                    <span>Sample Ambulances</span>
+                    <strong id="statAmb">-</strong>
                 </div>
 
                 <div class="stat-card">
-                    <span>Medical Facilities</span>
-                    <strong>12</strong>
+                    <span>Sample Hospitals</span>
+                    <strong id="statHosp">-</strong>
                 </div>
 
                 <div class="stat-card">
-                    <span>Supply Lines</span>
-                    <strong>10</strong>
+                    <span>Sample Flood Zones</span>
+                    <strong id="statFlood">-</strong>
                 </div>
 
                 <div class="stat-card">
-                    <span>Network Status</span>
+                    <span>System Status</span>
                     <strong class="green-text">Demo Active</strong>
                 </div>
             </div>
@@ -137,6 +162,14 @@
         <p><strong>✚ NIRODAYA</strong> — Health that rises with you.</p>
         <p>For emergencies in India, call 112.</p>
     </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // Count the numbers from data.js so the home page is always accurate
+        document.getElementById("statAmb").textContent = AMBULANCES.length;
+        document.getElementById("statHosp").textContent = HOSPITALS.length;
+        document.getElementById("statFlood").textContent = HAZARDS.length;
+    </script>
 
 </body>
 </html>
